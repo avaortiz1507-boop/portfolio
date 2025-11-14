@@ -1,70 +1,109 @@
 body {
-background-color: pink;
-font-family: Verdana, sans-serif;
+  background-color: rgb(150, 179, 226);
+  font-family: Verdana, sans-serif;
 }
 h1 {
-    color:beige;
-}
-p  {
-    font-weight: bold;
+  color: rgb(2, 6, 35);
 }
 
+h2 {
+  font-size: 50px;
+}
+#container-home {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+p {
+  font-size: 25px;
+}
+
+#container-about {
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+
+#social-media {
+  font-size: 25px;
+}
 header {
-    border-bottom: 2px solid black;
+  border-bottom: 2px solid black;
+  text-align: center;
+  /* create a stacking context so header/nav sit above the fixed background */
+  position: relative;
+  z-index: 2;
+}
+/* The background is now a dedicated element (#background-image) so it can be
+   layered, sized, and controlled independently of body. */
+
+#background-image {
+  /* full-page fixed background placed behind content; top/height offset
+     are controlled via --header-height set by script.js */
+  position: fixed;
+  top: var(--header-height, 0px);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--header-height, 0px));
+  background-image: url("https://cdn.pixabay.com/photo/2020/01/12/03/08/orchids-4759196_1280.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1; /* send behind page content */
+  /* Use opacity here if desired; consider overlay for better control */
+  opacity: 0.4;
 }
 
 #desktop-section {
-    display: inline-block;
+  display: inline-block;
 }
 
-
+ul {
+  font-size: 25px;
+}
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: none;
-    opacity: 0;
-    border: 1px black;
+  list-style-type: none;
+  padding: 0;
+  display: none;
+  opacity: 0;
+  border: 1px black;
 }
 nav ul li {
-    text-align:center; 
+  text-align: center;
 }
 
 nav ul li a {
-    text-decoration: none;
-    display: block;
-    padding: 10px;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
 }
-
-
+figure {
+  text-align: center;
+}
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 900px) {
-    section {
-        display: inline-block;
-    }
+  section {
+    display: inline-block;
+  }
 }
 
 /* Desktop */
 @media screen and (min-width: 930px) {
-   
-    section {
-        width: 30%;
-    }
-
-    #desktop-section {
-        display: inline-block;
-    }
-    
-    header button {
-        display: none;
-    }
-
-    nav ul {
-        opacity: 1;
-        display: block;
-    
-    }
-     nav ul li {
+  #desktop-section {
     display: inline-block;
-}
+  }
+
+  header button {
+    display: none;
+  }
+
+  nav ul {
+    opacity: 1;
+    display: block;
+  }
+  nav ul li {
+    display: inline-block;
+  }
 }
