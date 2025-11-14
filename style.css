@@ -1,0 +1,70 @@
+body {
+background-color: pink;
+font-family: Verdana, sans-serif;
+}
+h1 {
+    color:beige;
+}
+p  {
+    font-weight: bold;
+}
+
+header {
+    border-bottom: 2px solid black;
+}
+
+#desktop-section {
+    display: inline-block;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    opacity: 0;
+    border: 1px black;
+}
+nav ul li {
+    text-align:center; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    section {
+        display: inline-block;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 930px) {
+   
+    section {
+        width: 30%;
+    }
+
+    #desktop-section {
+        display: inline-block;
+    }
+    
+    header button {
+        display: none;
+    }
+
+    nav ul {
+        opacity: 1;
+        display: block;
+    
+    }
+     nav ul li {
+    display: inline-block;
+}
+}
