@@ -26,6 +26,13 @@ p {
   text-align: center;
 }
 
+#container-contact {
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+
 #social-media {
   font-size: 25px;
 }
