@@ -7,41 +7,41 @@ h1 {
 }
 
 h2 {
-  font-size: 50px;
+  /* font-size: 50px; */
 }
-#container-home {
+
+h3 {
+  font-size: 15px;
+  font-weight: normal;
+}
+.container {
   width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 p {
   font-size: 25px;
 }
 
-#container-about {
-  width: 80%;
-  margin: 0 auto;
-  align-items: center;
-  text-align: center;
-}
-
-#container-contact {
-  width: 80%;
-  margin: 0 auto;
-  align-items: center;
-  text-align: center;
-}
-
 #social-media {
   font-size: 25px;
 }
+
 header {
   border-bottom: 2px solid black;
   text-align: center;
   /* create a stacking context so header/nav sit above the fixed background */
   position: relative;
   z-index: 2;
+}
+
+header button {
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 /* The background is now a dedicated element (#background-image) so it can be
    layered, sized, and controlled independently of body. */
@@ -61,10 +61,6 @@ header {
   z-index: -1; /* send behind page content */
   /* Use opacity here if desired; consider overlay for better control */
   opacity: 0.4;
-}
-
-#desktop-section {
-  display: inline-block;
 }
 
 ul {
@@ -91,17 +87,10 @@ figure {
 }
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 900px) {
-  section {
-    display: inline-block;
-  }
 }
 
 /* Desktop */
 @media screen and (min-width: 930px) {
-  #desktop-section {
-    display: inline-block;
-  }
-
   header button {
     display: none;
   }
