@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
+    <div id="background-image2" aria-hidden="true"></div>
     <header>
       <nav>
         <ul id="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Me</a></li>
+           <li><a href="projects.html">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -20,35 +22,55 @@
          <h1>About Me</h1>
     <section id="me">
       <h2>More About Me</h2>
-      <p>Hello! I am a first year Software Development student at Bates Technical College.
-         <br />
-         <br />
-         My hobbies include baking, drawing and playing videogames. I also love cats!
-         <br />
+      <p>I love baking, playing video games and doing digital art.</p>
+        <p>Some of my art:</p>
+          <div class="image-row">
+                <img src="./assets/images/mikasa and eren.jpeg" alt="Image 1">
+                <img src="./assets/images/sword girl.jpeg" alt="Image 2">
+                <img src="./assets/images/stardust crusaders.jpeg" alt="Image 3">
+                <br />
+            </section>
         <br />
-        This portfolio is to showcase my skills and projects as I learn and grow in the field of Software Development.
         <br />
-         <br />
+        <p>I have 4 cats. They are my world and I love them so much!</p>
+        <style>
+  /* Container for images */
+  .image-row {
+    display: flex;              /* Arrange items in a row */
+    justify-content: center;    /* Center images horizontally */
+    flex-wrap: wrap;            /* Allow wrapping on small screens */
+    gap: 10px;                  /* Space between images */
+  }
+
+  /* Style for each image */
+  .image-row img {
+    width: 23%;                 /* 4 images per row with small gap */
+    height: auto;               /* Keep aspect ratio */
+    border-radius: 5px;         /* Optional: rounded corners */
+    object-fit: cover;          /* Crop to fit if needed */
+  }
+
+  /* Responsive: stack images on small screens */
+  @media (max-width: 600px) {
+    .image-row img {
+      width: 48%;               /* 2 images per row on small screens */
+    }
+  }
+  </style>
+  <section>
+            <div class="image-row">
+                <img src="./assets/images/cat boy.jpeg" alt="Image 1">
+                <img src="./assets/images/meowie.jpeg" alt="Image 2">
+                <img src="./assets/images/chadwick.jpeg" alt="Image 3">
+                <img src="./assets/images/thor.jpeg" alt="Image 4">
+                <br />
+            </section>
+            <br />
+                    <p>From left to right: Cat-Boy, Meowie, Chadwick, Thor</p>
+            </div>
+        <br />
+        <br />
          </p>
     </section>
-
-    <section id="links">
-      <h2>Projects</h2>
-        <p>During my fall quarter, I've been working on  my first wesbite.</p>
-        <ul>
-            <li>
-                <a href="https://github.com/avaortiz1507-boop/basic-website" target="_blank">
-                   Basic Website
-                  </a>
-            </li>
-        </ul>
-    </section>
-    
-    <section id="social-media">
-        <h2>GitHub -></h2>
-        <a href="https://github.com/avaortiz1507-boop" target="_blank">
-          Ava's Github
-        </a>
-          <h3>Skills used: HTML, JavaScript, CSS</h3>
   </body>
 </html>
