@@ -2,6 +2,17 @@ body {
   background-color: rgb(150, 179, 226);
   font-family: Verdana, sans-serif;
 }
+/* Make page use a column flex layout so footer can sit at the bottom when
+   content is short. .container will grow to fill available space. */
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 img {
   border-radius: 50%;
@@ -33,6 +44,7 @@ h3 {
   flex-direction: column;
   text-align: center;
   color: rgb(2, 6, 35);
+  flex: 1 0 auto; /* allow container to grow so footer is pushed to page bottom */
 }
 p {
   font-size: 25px;
@@ -57,6 +69,37 @@ header button {
   right: 10px;
 }
 
+footer {
+  color: white;
+  text-align: center;
+  padding: 15px;
+  /* footer now participates in normal document flow (not fixed) */
+  position: static;
+  width: 100%;
+  margin-top: auto; /* ensure footer is pushed to bottom when container is flexible */
+}
+/* Container for images */
+.image-row {
+  display: flex; /* Arrange items in a row */
+  justify-content: center; /* Center images horizontally */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 10px; /* Space between images */
+}
+
+/* Style for each image */
+.image-row img {
+  width: 23%; /* 4 images per row with small gap */
+  height: auto; /* Keep aspect ratio */
+  border-radius: 5px; /* Optional: rounded corners */
+  object-fit: cover; /* Crop to fit if needed */
+}
+
+/* Responsive: stack images on small screens */
+@media (max-width: 600px) {
+  .image-row img {
+    width: 48%; /* 2 images per row on small screens */
+  }
+}
 #image-row {
   height: "100";
 }
@@ -188,6 +231,16 @@ figure img {
   .github-mark {
     width: 56px; /* slightly smaller on small phones */
   }
+}
+/* Footer: center content horizontally and stack vertically */
+footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 0;
 }
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 900px) {
