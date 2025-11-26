@@ -1,17 +1,13 @@
 body {
   background-color: rgb(150, 179, 226);
   font-family: Verdana, sans-serif;
-}
-/* Make page use a column flex layout so footer can sit at the bottom when
-   content is short. .container will grow to fill available space. */
-
-html body {
-  height: 100%;
-}
-body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+html body {
+  height: 100%;
 }
 
 img {
@@ -44,7 +40,7 @@ h3 {
   flex-direction: column;
   text-align: center;
   color: rgb(2, 6, 35);
-  flex: 1 0 auto; /* allow container to grow so footer is pushed to page bottom */
+  flex: 1 0 auto;
 }
 
 .container-2 {
@@ -56,7 +52,7 @@ h3 {
   flex-direction: column;
   text-align: center;
   color: rgb(2, 6, 35);
-  flex: 1 0 auto; /* allow container to grow so footer is pushed to page bottom */
+  flex: 1 0 auto;
 }
 p {
   font-size: 25px;
@@ -92,18 +88,18 @@ footer {
 }
 /* Container for images */
 .image-row {
-  display: flex; /* Arrange items in a row */
-  justify-content: center; /* Center images horizontally */
-  flex-wrap: wrap; /* Allow wrapping on small screens */
-  gap: 10px; /* Space between images */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 /* Style for each image */
 .image-row img {
-  width: 23%; /* 4 images per row with small gap */
-  height: auto; /* Keep aspect ratio */
-  border-radius: 5px; /* Optional: rounded corners */
-  object-fit: cover; /* Crop to fit if needed */
+  width: 23%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
 /* Responsive: stack images on small screens */
@@ -115,12 +111,8 @@ footer {
 #image-row {
   height: "100";
 }
-/* The background is now a dedicated element (#background-image) so it can be
-   layered, sized, and controlled independently of body. */
 
 #background-image {
-  /* full-page fixed background placed behind content; top/height offset
-     are controlled via --header-height set by script.js */
   position: fixed;
   top: var(--header-height, 0px);
   left: 0;
@@ -130,14 +122,11 @@ footer {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -1; /* send behind page content */
-  /* Use opacity here if desired; consider overlay for better control */
+  z-index: -1;
   opacity: 0.4;
 }
 
 #background-image2 {
-  /* full-page fixed background placed behind content; top/height offset
-     are controlled via --header-height set by script.js */
   position: fixed;
   top: var(--header-height, 0px);
   left: 0;
@@ -147,14 +136,11 @@ footer {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -1; /* send behind page content */
-  /* Use opacity here if desired; consider overlay for better control */
+  z-index: -1;
   opacity: 0.4;
 }
 
 #background-image3 {
-  /* full-page fixed background placed behind content; top/height offset
-     are controlled via --header-height set by script.js */
   position: fixed;
   top: var(--header-height, 0px);
   left: 0;
@@ -164,14 +150,11 @@ footer {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -1; /* send behind page content */
-  /* Use opacity here if desired; consider overlay for better control */
+  z-index: -1;
   opacity: 0.4;
 }
 
 #background-image4 {
-  /* full-page fixed background placed behind content; top/height offset
-     are controlled via --header-height set by script.js */
   position: fixed;
   top: var(--header-height, 0px);
   left: 0;
@@ -181,8 +164,7 @@ footer {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -1; /* send behind page content */
-  /* Use opacity here if desired; consider overlay for better control */
+  z-index: -1;
   opacity: 0.4;
 }
 ul {
@@ -227,8 +209,8 @@ figure img {
 /* iPhone / small-screen tweak */
 @media (max-width: 480px) {
   figure img {
-    width: 80vw; /* occupy most of the small viewport */
-    max-width: 320px; /* prevent excessively large images on some phones */
+    width: 80vw;
+    max-width: 320px;
   }
 }
 
@@ -244,7 +226,7 @@ figure img {
     width: 56px; /* slightly smaller on small phones */
   }
 }
-/* Footer: center content horizontally and stack vertically */
+
 footer {
   text-align: center;
   display: flex;
