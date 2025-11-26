@@ -30,20 +30,33 @@ document.addEventListener("DOMContentLoaded", function () {
       const message = document.querySelector("#message").value;
       const errorMsg = document.querySelector(".error");
 
-      const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,3}/;
+      // simple, more permissive email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      // validate email format
-      if (firstName === "" && lastName === "" && email === "") {
-        errorMsg.innerText = "Please enter required fields.";
+      // helper to set an error message if an element exists
+      function setError(msg) {
+        if (errorMsg) {
+          errorMsg.innerText = msg;
+        } else {
+          console.warn(msg);
+        }
       }
-      if (!emailRegex.test(email)) {
-        errorMsg.innerText = "Please enter a valid email address.";
+
+      // validate required fields (at least provide an email or a name)
+      if (firstName === "" && lastName === "" && email === "") {
+        setError("Please enter required fields.");
+        return;
+      }
+      if (email && !emailRegex.test(email)) {
+        setError("Please enter a valid email address.");
         return;
       }
 
       // submit form
 
-      errorMsg.innerText = ""; // clear any previous error messages
+      if (errorMsg) {
+        errorMsg.innerText = ""; // clear any previous error messages
+      }
 
       // build the mailto form
       const subject = encodeURIComponent(
@@ -56,10 +69,24 @@ document.addEventListener("DOMContentLoaded", function () {
           `Message: ${message}`
       );
 
-      const recipient = "amortiz@batestech.com";
+      let recipient = "amortiz@batestech.com";
+      const mailtoAnchor = document.querySelector('a[href^="mailto:"]');
+      if (mailtoAnchor) {
+        try {
+          const href = mailtoAnchor.getAttribute("href");
+          const parsed = href.replace(/^mailto:/i, "").split("?")[0];
+          if (parsed) recipient = parsed;
+        } catch (e) {
+          console.warn(
+            "Could not parse mailto anchor, using default recipient",
+            e
+          );
+        }
+      }
+
       const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
 
-      // open the mailto link
+      // Open the mailto link
       window.location.href = mailtoLink;
 
       // reset form
