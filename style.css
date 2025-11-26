@@ -3,6 +3,11 @@ body {
   font-family: Verdana, sans-serif;
 }
 
+img {
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px 2px rgba(4, 2, 42, 0.5);
+}
+
 h1 {
   font-size: 2.5em;
   color: rgb(2, 6, 35);
@@ -29,7 +34,6 @@ h3 {
   text-align: center;
   color: rgb(2, 6, 35);
 }
-
 p {
   font-size: 25px;
   color: rgb(20, 23, 82);
@@ -38,7 +42,6 @@ p {
 #social-media {
   font-size: 25px;
 }
-
 header {
   border-bottom: 2px solid black;
   text-align: center;
@@ -171,6 +174,19 @@ figure img {
   figure img {
     width: 80vw; /* occupy most of the small viewport */
     max-width: 320px; /* prevent excessively large images on some phones */
+  }
+}
+
+/* GitHub mark size (projects page) */
+.github-mark {
+  width: 80px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .github-mark {
+    width: 56px; /* slightly smaller on small phones */
   }
 }
 /* Tablet */
